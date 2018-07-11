@@ -13,6 +13,7 @@ h1 {
 }
 
 p {
+    margin: 2em;
     position: relative;
     top: 100px;
     left: 150px;
