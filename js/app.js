@@ -70,3 +70,53 @@
        
 
 
+/// beginning of Array checker
+
+var myArray = ['a','b','c','d','e','f'];
+var guessesLeft = 6;
+var score = 0;
+
+
+
+while (guessesLeft > 0)
+{
+  var userGuess = prompt('take a guess');
+  var rightGuess = false;
+  // at this point we have a userGuess word
+  // now for each word we compare it with whole array
+  for (var i = 0; i < myArray.length; i++)
+  {
+    if (userGuess === myArray[i]) {
+
+
+
+      rightGuess = true;
+
+
+    }
+
+  }
+
+  if (rightGuess === false) {
+    guessesLeft --;
+    alert('sorry wrong '+ guessesLeft + ' left and your score is currently ' + score);
+
+  }
+  else {
+    score++;
+    guessesLeft --;
+    // hmm, i don't know how to implement this quite, but I know that I want something like this to subtract the user guess from the myArray so that they can't keep guessing an already known value and running up their score. 
+    // myArray.slice(userGuess);
+    alert('thats right! you have ' + guessesLeft + ' left and your score is currently ' + score);
+
+  }
+
+}
+
+if (guessesLeft === 0) {
+    alert("you're done! Your final score was" + score);
+}
+
+       
+
+
