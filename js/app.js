@@ -75,10 +75,13 @@
 
 /// beginning of Array checker
 
+var GlobalCorrect = [];
+
 function arrayChecker(){
     var myArray = ['a','b','c','d','e','f'];
     var guessesLeft = 6;
     var score = 0;
+    var correctArray = [];
 
 while (guessesLeft > 0){
     var userGuess = prompt('take a guess');
@@ -99,6 +102,11 @@ while (guessesLeft > 0){
             guessesLeft --;
             // hmm, i don't know how to implement this quite, but I know that I want something like this to subtract the user guess from the myArray so that they can't keep guessing an already known value and running up their score.
             // myArray.slice(userGuess);
+             //creating a staging ground for popping off correct answers
+      var HoldsUserGuess = userGuess;
+      if (myArray.includes(HoldsUserGuess)){
+        correctArray.pop(HoldsUserGuess) && GlobalCorrect.pop(HoldsUserGuess);
+      }
             alert('thats right! you have ' + guessesLeft + ' left and your score is currently ' + score);
         }
 
